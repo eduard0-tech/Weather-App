@@ -1,0 +1,204 @@
+/* Animações Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Estilos do card principal */
+.weather-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)) 1;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Organização interna com Flexbox */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Animação de entrada */
+  animation: fadeInUp 0.5s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para o cabeçalho do card */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.card-header>div {
+  text-align: left;
+}
+
+.card-header h1 {
+  margin: 0 0 0.1rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.card-header p {
+  font-size: 0.9rem;
+  color: #c0c0c0;
+  margin: 0;
+}
+
+.card-header .description {
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #e0e0e0;
+  text-transform: capitalize;
+}
+
+/* Estilos para a informação principal (ícone e temperatura) */
+.main-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.main-info img {
+  width: 70px;
+  height: 70px;
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 1s;
+  margin-bottom: 0.5rem;
+}
+
+.main-info .temperature {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo para a grade de detalhes */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.details-grid:last-of-type {
+  margin-bottom: 0;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-item .value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.detail-item .label {
+  font-size: 0.8rem;
+  color: #c0c0c0;
+  margin-top: 4px;
+}
+
+/* Animações em cascata */
+.card-header,
+.main-info,
+.details-grid {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.card-header {
+  animation-delay: 0.3s;
+}
+
+.main-info {
+  animation-delay: 0.5s;
+}
+
+.details-grid:nth-of-type(1) {
+  animation-delay: 0.7s;
+}
+
+/* Primeira grade */
+.details-grid:nth-of-type(2) {
+  animation-delay: 0.9s;
+}
+
+/* Segunda grade */
+
+/* Media Query para Mobile */
+@media (max-width: 480px) {
+  .weather-card {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-header>div,
+  .card-header .description {
+    text-align: center;
+  }
+
+  .main-info .temperature {
+    font-size: 3.5rem;
+  }
+
+  .details-grid {
+    gap: 0.8rem;
+  }
+
+  .detail-item .value {
+    font-size: 0.9rem;
+  }
+
+  .detail-item .label {
+    font-size: 0.75rem;
+  }
+}

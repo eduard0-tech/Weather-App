@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Efeito de fundo "Aurora" com gradientes radiais */
+  background-color: #1a1a2e;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(16, 24, 64, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(120, 40, 200, 0.5) 0%, transparent 50%);
+  background-size: 200% 200%;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0;
+
+  /* Animação para movimentar o fundo */
+  animation: moveAurora 20s ease-in-out infinite alternate;
+}
+
+@keyframes moveAurora {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.weather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
