@@ -5,8 +5,6 @@
 ---
 
 ## ✨ Funcionalidades
-
--   **Dados em Tempo Real**: Exibe informações atuais de temperatura, sensação térmica, umidade, velocidade do vento, índice UV, pressão e visibilidade.
 -   **Interface Moderna**: Design com efeito de vidro (glassmorphism) que se destaca sobre um fundo animado.
 -   **Animações Suaves**: Efeitos de entrada em cascata para os elementos e um ícone de clima flutuante para uma experiência de usuário mais agradável.
 -   **Busca de Dados**: Integração com a [WeatherAPI.com](https://www.weatherapi.com/) para obter dados meteorológicos.
@@ -74,3 +72,4 @@ Siga os passos abaixo para rodar o projeto em sua máquina local.
 Devido às limitações comuns em planos gratuitos, **as informações exibidas podem não ter uma precisão de 100%** ou podem ter um pequeno atraso na atualização em comparação com serviços meteorológicos premium. O projeto é ideal para fins de estudo, portfólio e desenvolvimento, mas não é recomendado para aplicações críticas que dependam de dados meteorológicos de alta precisão.
 
 ---
+
